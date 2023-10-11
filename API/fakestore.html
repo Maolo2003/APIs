@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeStore</title>
+
+    <script>
+        function producto(){
+            fetch('https://fakestoreapi.com/products/'+document.getElementById('producto').value+'/')
+           
+            .then(response => response.json())
+            .then(data => {
+                let imagen = document.createElement('img')
+                imagen.src = data.image
+                productico.appendChild(imagen)
+                let titulo = document.createElement('h1')
+                titulo.innerText = data.title
+                titulito.appendChild(titulo)
+                let precio = document.createElement('h1')
+                precio.innerText = data.price
+                preciecito.appendChild(precio)
+
+            })
+        }
+
+    </script>
+
+    <style>
+        
+        body{
+            align-items: center;
+            text-align: center;
+        }
+
+     
+
+    </style>
+
+</head>
+<body>
+
+    Digite su Numero de producto: <input type="number" id="producto">
+   <button onclick="producto()">Producto</button>
+    
+   <h1>Producto</h1>
+
+   <div class="card" id="tienda">
+    <div class="card-header" id="titulito"></div>
+    <div class="card-body" Basic card id="productico"></div>
+    <div class="card-footer" id="preciecito"></div>
+  </div>
+    
+</body>
+</html>

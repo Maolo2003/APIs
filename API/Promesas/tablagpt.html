@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla de Departamentos y Municipios</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabla de Departamentos y Municipios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Departamento</th>
+                <th>Municipio</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-body">
+        </tbody>
+    </table>
+
+    <button onclick="agregarMunicipio()">Agregar Municipio</button>
+
+    <script>
+        const data = [
+            {
+                "departamento": "Departamento 1",
+                "municipios": ["Municipio 1A", "Municipio 1B", "Municipio 1C"]
+            },
+            {
+                "departamento": "Departamento 2",
+                "municipios": ["Municipio 2A", "Municipio 2B"]
+            },
+            {
+                "departamento": "Departamento 3",
+                "municipios": ["Municipio 3A"]
+            }
+        ];
+
+        let departamentoIndex = 0;
+        let municipioIndex = 0;
+
+        function agregarMunicipio() {
+            const tablaBody = document.getElementById("tabla-body");
+            const departamento = data[departamentoIndex].departamento;
+            const municipios = data[departamentoIndex].municipios;
+
+            const row = document.createElement("tr");
+            const departamentoCell = document.createElement("td");
+            const municipioCell = document.createElement("td");
+
+            departamentoCell.textContent = departamento;
+            municipioCell.textContent = municipios[municipioIndex];
+
+            row.appendChild(departamentoCell);
+            row.appendChild(municipioCell);
+            tablaBody.appendChild(row);
+
+            municipioIndex++;
+
+            if (municipioIndex >= municipios.length) {
+                municipioIndex = 0;
+                departamentoIndex++;
+
+                if (departamentoIndex >= data.length) {
+                    document.querySelector("button").disabled = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
