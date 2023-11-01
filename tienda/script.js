@@ -14,6 +14,7 @@ function obtenerProductosYCrearCartas() {
             <p><strong>Category:</strong> ${producto.category}</p>
             <p><strong>Rating:</strong> ${producto.rating.rate} (based on ${producto.rating.count} ratings)</p>
             <img src="${producto.image}" alt="${producto.title}" />
+            <button class="agregarCarrito" onclick="agregaralcarro()">Agregar al carrito</button> <!-- Botón dentro de la carta -->
           `;
           productosDiv.appendChild(carta);
         });
@@ -24,4 +25,11 @@ function obtenerProductosYCrearCartas() {
   }
   
   window.addEventListener('load', obtenerProductosYCrearCartas);
+
+
+  function agregaralcarro(){
   
+  const productico = document.getElementsByClassName('carta')
+  cuerpo_carrito.appendChild(productico)
+  
+  }

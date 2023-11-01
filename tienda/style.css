@@ -1,16 +1,36 @@
-/* Estilo básico para las cartas, puedes personalizarlo más */
 .carta {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
-    width: 10%;
-    display: inline-block;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Estilo para la imagen en la carta */
-  .carta img {
-    max-width: 100%;
-    height: 100%;
-  }
-  
+  width: 300px; /* Establece el ancho fijo para las cartas */
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para la imagen en la carta */
+.carta img {
+  max-width: 100%; /* Ajusta el ancho máximo de la imagen al 100% del contenedor */
+  height: auto; /* Esto mantiene la relación de aspecto original de la imagen */
+  max-height: 200px; /* Establece una altura máxima si es necesario */
+}
+
+#carrito{
+  position: fixed;
+  top: 10px; /* Ajusta la posición vertical según tus necesidades */
+  right: 10px; /* Ajusta la posición horizontal según tus necesidades */
+  background-color:white;
+  color: #0D6EFD;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  z-index: 999; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.agregarCarrito{
+  background-color: #0D6EFD;
+  color: white;
+  align-self: flex-end; /* Alinea el botón en la parte inferior de la carta */
+}
+
+
+ 
