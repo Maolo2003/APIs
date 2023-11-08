@@ -1,0 +1,42 @@
+https://codeshare.io/WdQooY
+
+escribircookieLocal.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>    
+    var carrito = [];
+
+    function guardar(){
+        let producto = {
+            title: "pantalon",
+            price: 232,
+            category: "ropa"
+        }
+        
+        carrito.push(producto)
+
+        localStorage.setItem('carrito',carrito)
+    }
+
+    function limpiarCookies(){
+        localStorage.clear();
+    }
+
+    function leer(){
+      let cargarcarrito = localStorage.getItem('carrito')
+    
+    }
+    </script>
+</head>
+<body>
+    <button onclick="guardar()">GUARDAR COOKIE</button>
+
+    <button onclick="leer()">LEER LA COOKIE</button>
+
+    <button onclick="limpiarCookies()">LIMPIAR LA COOKIE</button>   
+</body>
+</html>

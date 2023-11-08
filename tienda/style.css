@@ -1,5 +1,5 @@
 .carta {
-  width: 300px; /* Establece el ancho fijo para las cartas */
+  width: 600px; /* Establece el ancho fijo para las cartas */
   border: 1px solid #ccc;
   padding: 10px;
   margin: 10px;
@@ -27,10 +27,28 @@
 }
 
 .agregarCarrito{
+  
   background-color: #0D6EFD;
   color: white;
   align-self: flex-end; /* Alinea el botón en la parte inferior de la carta */
 }
 
+#formulariostyle{
+  display: grid;
+  place-items: center;
+  margin: auto;
+  margin-top: 300px;
+  width: 500px;
+  height: auto;
+  border: solid black 1px;
+  background-color: #CFE2FF;
+} 
 
- 
+.cartaproducto {
+  width: 600px; /* Establece el ancho fijo para las cartas */
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}

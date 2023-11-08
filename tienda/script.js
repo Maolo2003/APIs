@@ -14,6 +14,7 @@ function obtenerProductosYCrearCartas() {
             <p><strong>Category:</strong> ${producto.category}</p>
             <p><strong>Rating:</strong> ${producto.rating.rate} (based on ${producto.rating.count} ratings)</p>
             <img src="${producto.image}" alt="${producto.title}" />
+            <br> <br>
             <button class="agregarCarrito" onclick="agregaralcarro()">Agregar al carrito</button> <!-- Botón dentro de la carta -->
           `;
           productosDiv.appendChild(carta);
@@ -29,7 +30,9 @@ function obtenerProductosYCrearCartas() {
 
   function agregaralcarro(){
   
-  const productico = document.getElementsByClassName('carta')
+  const productico = document.createElement('div')
+  productico.className('cartaproducto')
+
   cuerpo_carrito.appendChild(productico)
   
   }
